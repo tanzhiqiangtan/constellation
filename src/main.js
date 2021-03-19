@@ -2,5 +2,9 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-
-createApp(App).use(store).use(router).mount('#app')
+import './assets/css/border.css'
+import './assets/css/resets.css'
+import './assets/js/fastclick.js'
+import './assets/js/common.js'
+import plugin from './components/common'
+createApp(App).use(store).use(router).use(plugin).mount('#app')

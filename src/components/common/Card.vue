@@ -1,0 +1,58 @@
+<template>
+  <div class="card">
+    <div class="wrapper">
+      <img
+        :src="require(`../../assets/img/${name || '金牛座'}.jpg`)"
+        :alt="name"
+      />
+      <div class="mask">
+        <h1>{{ name }}</h1>
+        <p v-if="allIndex">综合指数：{{ allIndex }}</p>
+      </div>
+    </div>
+  </div>
+</template>
+<script>
+export default {
+  name: "Card",
+  props: {
+    name: String,
+    allIndex: String
+  }
+};
+</script>
+
+<style lang="scss" scoped>
+.card {
+  padding: 0.1rem;
+  box-sizing: border-box;
+
+  .wrapper {
+    position: relative;
+    border-radius: 0.15rem;
+    box-shadow: 0.02rem 0.03rem 0.05rem #333;
+    overflow: hidden;
+
+    .mask {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.4);
+      color: #ffd7f5;
+      font-size: 0.5rem;
+
+      p {
+        font-size: 0.2rem;
+        color: #fff;
+        margin-top: 0.35rem;
+      }
+    }
+  }
+}
+</style>
